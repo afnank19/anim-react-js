@@ -1,42 +1,95 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.landing-page{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  margin-left: 4rem;
+  margin-right: 5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.span-italic{
+  font-family: "Playfair Display";
+  font-style: italic;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-bar{
+  display: flex;
+}
+.nav-name{
+  flex: 1;
+  font-size: 48px;
+  margin: 1rem;
+}
+.nav-links{
+  display: flex;
+  flex: 2;
+  font-size: 14px;
+  gap: 12rem;
+  margin: 1.5rem;
+  font-weight: 300;
+}
+@media only screen and (max-width: 771px) {
+  .nav-links{
+    gap: 1rem;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .landing-page{
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.line{
+  height: 10px;
+  background: linear-gradient(90deg, #00D7E6, #1C0AE0, #DB0707);
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.home-container{
+  max-width: 650px;
+  margin-left: 1rem;
+  margin-bottom: 5rem;
+}
+.home-copy{
+  font-size: 24px;
+  font-weight: 200;
+  color: #5E5959;
+  font-family: Helvetica;
 }
 
-.card {
-  padding: 2em;
+
+.links-container{
+  display: flex;
+  margin-left: 1rem;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.links-origin{
+  color: #AFA6A6;
+  font-size: 14px;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+}
+.links-location{
+  flex: 2;
+  font-size: 16px;
+}
+.links-prof{
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+}
+.links-social{
+  flex: 1;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.about-container{
+  height: 80vh;
 }
