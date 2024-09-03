@@ -7,7 +7,6 @@
   margin-right: 5rem;
 }
 
-
 .span-italic{
   font-family: "Playfair Display";
   font-style: italic;
@@ -30,7 +29,9 @@
   font-weight: 300;
   cursor: pointer;
 }
-
+.nav-link{
+  height: fit-content;
+}
 
 .line{
   height: 10px;
@@ -177,6 +178,29 @@
   margin-bottom: 1.5rem;
 }
 
+
+.footer-container{
+  margin-top: 4rem;
+  margin-bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-line{
+  width: 100%;
+  height: 1px;
+  background-color: #312e2e;
+}
+.footer-note{
+  margin: 0.8rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  color:  #545454;
+  width: 30%;
+  flex-grow: 1;
+  justify-content: space-between;
+  font-family: Helvetica;
+}
 
 
 @media only screen and (max-width: 771px) {
