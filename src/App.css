@@ -54,6 +54,7 @@
   background: linear-gradient(90deg, #00D7E6, #1C0AE0, #DB0707);
   margin-bottom: 1rem;
   margin-right: 1rem;
+  transform-origin: left;
 }
 .home-container{
   max-width: 650px;

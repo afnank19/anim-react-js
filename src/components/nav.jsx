@@ -17,7 +17,14 @@ const Nav = () => {
 
   return (
     <div className='nav-bar'>
-        <p className='nav-name'>AFNAN<br></br>KHALID</p>
+        <motion.p 
+          className='nav-name' 
+          animate={{opacity: 1}} 
+          transition={{ ease: [0,.85,.37,1.01], duration: 1 }} 
+          style={{opacity: 0}}
+        >
+          AFNAN<br></br>KHALID
+        </motion.p>
         <div className='nav-links'>
             <motion.p onClick={()  => {handleScroll('about')}}  initial="initial" whileHover="hovered" className='nav-link'>
               <motion.div className='nav-p-wrapper' variants={{ 
