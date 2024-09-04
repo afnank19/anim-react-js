@@ -4,12 +4,35 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #0D0C0C;
   color: #FFFFFF;
+  background-color: #0D0C0C;
   font-family: 'Nunito Sans';
   line-height: 1;
 }
 
 p{
   margin: 0;
+}
+
+.cover{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #0D0C0C;
+  z-index: -1;
+  --dot-bg: black;
+  --dot-color: rgb(39, 39, 39);
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
 }

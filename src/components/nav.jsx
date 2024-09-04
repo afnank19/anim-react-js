@@ -19,12 +19,59 @@ const Nav = () => {
     <div className='nav-bar'>
         <p className='nav-name'>AFNAN<br></br>KHALID</p>
         <div className='nav-links'>
-            <motion.p onClick={()  => {handleScroll('about')}}  initial={{y: 0}} whileHover={{y: -5}} className='nav-link'>ABOUT</motion.p>
-            <p onClick={()  => {handleScroll('philosophy')}}>PHILOSOPHY</p>
-            <p onClick={()  => {handleScroll('work')}}>WORK</p>
+            <motion.p onClick={()  => {handleScroll('about')}}  initial="initial" whileHover="hovered" className='nav-link'>
+              <motion.div className='nav-p-wrapper' variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                ABOUT
+              </motion.div>
+              <motion.div style={{position: "absolute"}} variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                ABOUT
+              </motion.div>
+            </motion.p>
+            <motion.p onClick={()  => {handleScroll('philosophy')}} initial="initial" whileHover="hovered" className='nav-link'>
+              <motion.div className='nav-p-wrapper' variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                PHILOSOPHY
+              </motion.div>
+              <motion.div style={{position: "absolute"}} variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                PHILOSOPHY
+              </motion.div>
+            </motion.p>
+            <motion.p onClick={()  => {handleScroll('work')}} initial="initial" whileHover="hovered" className='nav-link'>
+              <motion.div className='nav-p-wrapper' variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                WORK
+              </motion.div>
+              <motion.div style={{position: "absolute"}} variants={{ 
+                initial: { y: 0 }, 
+                hovered: { y: "-100%"},
+                }}
+              >
+                WORK
+              </motion.div>
+            </motion.p>
         </div>
     </div>
   )
 }
+
+//variants={{ initial: { y: 0 }, hovered: { y: "-100%"},}}
 
 export default Nav

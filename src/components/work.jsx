@@ -21,8 +21,8 @@ const Work = () => {
             <p className='work-heading'>WORK</p>
             <motion.div className='work-wrapper' style={{opacity: scrollYProgress}} ref={kaam}>
               <div className='work-data'>
-                  <Project projectTitle="Quiky" projectCopy={projectCopy[0]}/>
-                  <Project projectTitle="BrainFlow" projectCopy={projectCopy[1]}/>
+                  <Project projectTitle="Quiky" projectCopy={projectCopy[0]} url=""/>
+                  <Project projectTitle="BrainFlow" projectCopy={projectCopy[1]} url=""/>
               </div>
             </motion.div>
         </div>

@@ -1,3 +1,16 @@
+#trailer{
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  background-color: #fff;
+  border-radius: 50%;
+  border-width: 2px;
+  z-index: 1000;
+
+  pointer-events: none;
+}
+
+
 .landing-page{
   display: flex;
   flex-direction: column;
@@ -27,11 +40,14 @@
   gap: 12rem;
   margin: 1.5rem;
   font-weight: 300;
-  cursor: pointer;
 }
 .nav-link{
   height: fit-content;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
+
 
 .line{
   height: 10px;
@@ -74,12 +90,16 @@
   flex: 1;
   gap: 2rem;
 }
-.links-social{
+.links-social{ 
   flex: 1;
   margin-right: 2rem;
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
+}
+.white{
+  color: #fff;
+  text-decoration: none;
 }
 
 
@@ -147,6 +167,7 @@
   flex-direction: column;
 }
 
+
 .project-container{
   display: flex;
   flex-direction: column;
@@ -177,6 +198,12 @@
   background-color: #545454;
   margin-bottom: 1.5rem;
 }
+.project-link{
+  color: #fff;
+}
+.project-link:hover{
+  color: #e0dede;
+}
 
 
 .footer-container{
@@ -203,7 +230,11 @@
 }
 
 
-@media only screen and (max-width: 771px) {
+@media only screen and (max-width: 800px) {
+  .app{
+    gap: 4rem;
+  }
+
   .nav-links{
     gap: 1rem;
     flex-direction: column;
@@ -212,6 +243,16 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .links-container{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .links-location{
+    margin-bottom: 1rem;
+  }
+  .links-social{
+    justify-content: flex-start;
+  }
 
   .about-container{
     margin-left: 2rem;
@@ -219,6 +260,10 @@
   }
   .about-content{
     max-width: 80vw;
+    flex-direction: column;
+  }
+  .about-heading{
+    margin-bottom: 1rem;
   }
   .work-container{
     margin-left: 2rem;
@@ -226,5 +271,11 @@
   }
   .work-wrapper{
     width: 80vw;
+  }
+  .work-content{
+    flex-direction: column;
+  }
+  .work-heading{
+    margin-bottom: 1.5rem;
   }
 }

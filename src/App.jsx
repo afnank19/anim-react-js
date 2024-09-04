@@ -16,20 +16,24 @@ function App() {
   return (
     <>
       <ReactLenis root options={{duration: 1.4}}>
-        <div className='landing-page'>
-          <Nav />
-          <Links />
+        <div className='cover'></div>
+        <div className='app'>
+
+          <div className='landing-page'>
+            <Nav />
+            <Links />
+          </div>
+          <section id='about'>
+            <About />
+          </section>
+          <section id='philosophy'>
+            <Philosophy />
+          </section>
+          <section id='work'>
+            <Work />
+          </section>
+          <Footer />
         </div>
-        <section id='about'>
-          <About />
-        </section>
-        <section id='philosophy'>
-          <Philosophy />
-        </section>
-        <section id='work'>
-          <Work />
-        </section>
-        <Footer />
       </ReactLenis>
     </>
   )
