@@ -128,7 +128,9 @@
   font-weight: 200;
 }
 
-
+.philo-margin{
+  margin-bottom: 7rem;
+}
 .philosopy-copy-wrapper{
   flex: 1;
   display: flex;
@@ -145,7 +147,6 @@
 
 .work-container{
   display: flex;
-  height: 50vh;
   margin-left: 5rem;
   margin-right: 4rem;
   align-items: center;
@@ -277,5 +278,8 @@
   }
   .work-heading{
     margin-bottom: 1.5rem;
+  }
+  .philo-margin{
+    margin-bottom: 3rem;
   }
 }
