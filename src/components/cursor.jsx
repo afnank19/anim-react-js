@@ -19,7 +19,6 @@ const Cursor = () => {
         const { clientX, clientY} = e;
         mouse.x.set(clientX - size / 2);
         mouse.y.set(clientY -size / 2);
-        mouse.op.set(1)
     }
 
     useEffect(()=> {
