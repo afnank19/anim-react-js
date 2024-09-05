@@ -16,7 +16,7 @@ const Link = (props) => {
                 hovered: { y: "-100%"},
                 }}
               >
-                {props.title}
+                {props.title && props.title !="LINKEDIN"? props.title : props.title2}
               </motion.div>
     </motion.a>
   )

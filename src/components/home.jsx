@@ -13,7 +13,12 @@ const Home = () => {
               transition={{ duration: 1, ease: [0,.85,.37,1.01], delay: 0.3 }}
             >         
             </motion.div>
-            <p className='home-copy'>Building <span className='span-italic'>polished</span> software. Improving my skills through<br></br>exploration and curiosity.</p>
+            <motion.p className='home-copy'             
+              animate={{opacity: 1}} 
+              transition={{ ease: [0,.6,.5,1], duration: 2, delay: 0.3 }} 
+              style={{opacity: 0}}
+              >Building <span className='span-italic'>polished</span> software. Improving my skills through<br></br>exploration and curiosity.
+            </motion.p>
         </div>
     </div>
   )

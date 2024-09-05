@@ -14,6 +14,16 @@ p{
   margin: 0;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: rgb(0, 0, 0);
+  background: #8a8a8a;
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: #8a8a8a;
+}
+
 .cover{
   top: 0;
   left: 0;

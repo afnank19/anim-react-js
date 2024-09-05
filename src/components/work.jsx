@@ -14,7 +14,7 @@ const Work = () => {
     "An arcade roguelike inspired by Vampire Survivors, built in Unity. All assets self-made.",
     "Built using ElectronJS, BrainFlow is a productivity timer featuring the pomodoro technique.",
     "ExpressJS server that handles JWTs for session persistence. Firestore database to store user credentials.",
-    "A Twitter clone built for personal use. Uses the OwnAuth system for session management . React Native, ExpressJS, Firebase, NodeJS",
+    "A Twitter clone built for personal use. Uses the OwnAuth system for session management . React Native, ExpressJS, Firebase, NodeJS.",
     "A flutter app for a fintech startup aiming to make payments easier through NFC. ExpressJS back-end and firestore integration.",
   ]
 
