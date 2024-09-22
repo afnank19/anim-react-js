@@ -10,7 +10,7 @@ const Links = () => {
         <motion.p className='links-origin' animate={{opacity: 1}} transition={{ ease: [0,.6,.5,1], duration: 2, delay: 0.3 }} style={{opacity: 0}}>ISLAMABAD, PAKISTAN</motion.p>
         <div className='links-container'>
             <div className='links-location'>
-                <motion.p animate={{opacity: 1}} transition={{ ease: [0,.6,.5,1], duration: 2,delay: 0.4 }} style={{opacity: 0}}>10.8231°N 106.6297°E</motion.p>
+                <motion.p animate={{opacity: 1}} transition={{ ease: [0,.6,.5,1], duration: 2,delay: 0.4 }} style={{opacity: 0}}>33.1030°N 74.0747°E</motion.p>
             </div>
             <motion.div className='links-prof' animate={{opacity: 1}} transition={{ ease: [0,.6,.5,1], duration: 2 , delay: 0.5}} style={{opacity: 0}}>
                 <Link title="GITHUB" url="https://github.com/afnank19"/>
