@@ -48,7 +48,7 @@ const Nav = () => {
             animate={{x,y}}
             transition={{type:"spring", stiffness: 150, damping: 15, mass: 0.1}}
           >
-            AFNAN<br></br>KHALID
+            aFnaN<br></br>KhaLiD
           </motion.div>
         </motion.div>
         <div className='nav-links'>
