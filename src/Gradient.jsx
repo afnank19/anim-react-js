@@ -34,10 +34,10 @@ void main() {
 
     // Adjust coordinates to preserve aspect ratio
     vec2 aspectRatio = vec2(uResolution.x / uResolution.y, 1.0);
-    vec2 adjustedUV = (uv - vec2(0.5, 0.5)) * aspectRatio;
+    vec2 adjustedUV = (uv - vec2(0.5)) * aspectRatio;
 
     // Circle parameters
-    float radius = 0.01; // Circle radius
+    float radius = 0.01;      // Circle radius
     float edgeSoftness = 0.6; // Smoothness of the circle edges
 
     // Distance from the center of the circle
@@ -57,11 +57,20 @@ void main() {
     float d2 = length(uv - c2);
     vec3 col2 = palette(d2 + time, vec3(0.5, 0.5, 0.5), vec3(0.5, 0.5, 0.5), vec3(1.0, 1.0, 1.0), vec3(0.263, 0.416, 0.557));    
 
-    vec3 color = (col1) / 2.0;
+    vec3 color = (col1 + col2) / 2.0;
 
-    // Apply the mask to the color, with smooth edges
-    gl_FragColor = vec4(color * (1.0 - mask), 1.0);
+    // Generate grainy noise
+    float grain = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+    grain = grain * 2.0 - 1.0; // Center grain around 0 (-1 to 1)
+    grain *= 0.06;             // Adjust grain intensity
+
+    // Add noise to the final color
+    vec3 noisyColor = color + vec3(grain);
+
+    // Apply the mask to the noisy color, with smooth edges
+    gl_FragColor = vec4(noisyColor * (1.0 - mask), 1.0);
 }
+
       `,
   };
 
