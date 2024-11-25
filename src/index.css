@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
-body{
+body {
   margin: 0;
   padding: 0;
-  color: #FFFFFF;
-  background-color: #0D0C0C;
-  font-family: 'Nunito Sans', Helvetica;
+  color: #ffffff;
+  background-color: #0d0c0c;
+  font-family: "Nunito Sans", Helvetica;
   line-height: 1;
 }
 
-p{
+p {
   margin: 0;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: rgb(0, 0, 0);
   background: #8a8a8a;
 }
@@ -24,31 +25,39 @@ p{
   background: #8a8a8a;
 }
 
-.cover{
+.cover {
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: #0D0C0C;
+  background-color: #0d0c0c;
   z-index: -2;
   --dot-bg: black;
   --dot-color: rgb(39, 39, 39);
   --dot-size: 1px;
   --dot-space: 22px;
-	background:
-		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-		var(--dot-color);
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: column;
 }
 
 .test-cover {
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   z-index: -1;
 }

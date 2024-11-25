@@ -21,42 +21,47 @@ const GradientShader = () => {
         }
       `,
     fragmentShader: `
-        precision highp float;
-  
-        uniform vec2 uResolution;
-        uniform float uTime;
-  
-        vec3 calc(float x, vec3 a, vec3 b, vec3 c, vec3 d) {
-            return (b - d) * sin(1.0 / (vec3(x) / c + 2.0 / radians(180.0) - a)) + d;
-        }
-  
-        void main() {
-            vec2 uv = gl_FragCoord.xy / uResolution.xy;
-  
-            vec3 p_dark[4] = vec3[4](
-                vec3(0.3720705374951474, 0.3037080684557225, 0.26548632969565816),
-                vec3(0.446163834012046, 0.39405890487346595, 0.425676737673072),
-                vec3(0.16514907579431481, 0.40461292460006665, 0.8799446225003938),
-                vec3(-7.057075230154481e-17, -0.08647963850488945, -0.269042973306185)
-            );
-  
-            vec3 p_bright[4] = vec3[4](
-                vec3( 0.38976745480184677, 0.31560358280318124,  0.27932656874),
-                vec3( 1.2874522895367628,  1.0100154283349794,   0.862325457544),
-                vec3( 0.12605043174959588, 0.23134451619328716,  0.526179948359),
-                vec3(-0.0929868539256387, -0.07334463258550537, -0.192877259333)
-            );
-  
-            float x = 0.3 + 0.7 * sin(uv.x * radians(60.0) + (uTime / 2.0 - 4.0) * radians(30.0));
-  
-            vec3 a = mix(p_dark[0], p_bright[0], x);
-            vec3 b = mix(p_dark[1], p_bright[1], x);
-            vec3 c = mix(p_dark[2], p_bright[2], x);
-            vec3 d = mix(p_dark[3], p_bright[3], x);
-  
-            vec3 col = calc(uv.y, a, b, c, d);
-            gl_FragColor = vec4(col, 1.0);
-        }
+uniform float uTime;
+uniform vec2 uResolution;
+
+vec3 palette(in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d) {
+    return a + b * cos(6.28318 * (c * t + d));
+}
+
+void main() {
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = gl_FragCoord.xy / uResolution.xy;
+
+    // Adjust coordinates to preserve aspect ratio
+    vec2 aspectRatio = vec2(uResolution.x / uResolution.y, 1.0);
+    vec2 adjustedUV = (uv - vec2(0.5, 0.5)) * aspectRatio;
+
+    // Circle parameters
+    float radius = 0.01; // Circle radius
+    float edgeSoftness = 0.6; // Smoothness of the circle edges
+
+    // Distance from the center of the circle
+    float dist = length(adjustedUV);
+
+    // Smooth step to create a smooth circular fade-out
+    float mask = smoothstep(radius, radius + edgeSoftness, dist);
+
+    // Animated patterns
+    float time = uTime * 0.2;
+    vec2 c1 = vec2(sin(time) * 0.5, cos(uTime) * 0.7);
+    vec2 c2 = vec2(sin(time * 0.7) * 0.9, cos(uTime * 0.65) * 0.6);
+
+    float d1 = length(uv - c1);
+    vec3 col1 = palette(d1 + time, vec3(0.5, 0.5, 0.5), vec3(0.5, 0.5, 0.5), vec3(1.0, 1.0, 1.0), vec3(0.263, 0.416, 0.557));
+
+    float d2 = length(uv - c2);
+    vec3 col2 = palette(d2 + time, vec3(0.5, 0.5, 0.5), vec3(0.5, 0.5, 0.5), vec3(1.0, 1.0, 1.0), vec3(0.263, 0.416, 0.557));    
+
+    vec3 color = (col1) / 2.0;
+
+    // Apply the mask to the color, with smooth edges
+    gl_FragColor = vec4(color * (1.0 - mask), 1.0);
+}
       `,
   };
 
