@@ -7,17 +7,12 @@ import Work from "./components/work";
 import Philosophy from "./components/philosophy";
 import Footer from "./components/footer";
 import { motion, useScroll } from "framer-motion";
-import Cursor from "./components/cursor";
-// import Earth from "./Earth";
 import { useRef, useState } from "react";
-import Gradient from "./Gradient";
 
 function App() {
   const lenis = useLenis(({ scroll }) => {
     // called every scroll
   });
-
-  const [load3d, setLoad3d] = useState(false);
 
   const page = useRef(null);
 
@@ -32,9 +27,10 @@ function App() {
         <div className="cover"></div>
         {/* {load3d ? null : <Earth scrollY={scrollYProgress} />} */}
         {/* <Earth /> */}
-        <Gradient />
+        {/* <Gradient /> */}
         <div className="app" ref={page}>
-          {/* <Cursor /> */}
+          <div className="blur"></div>
+
           <motion.div
             className="landing-page"
             initial={{ scale: 0.98 }}
@@ -47,16 +43,25 @@ function App() {
             <Nav />
             <Links />
           </motion.div>
-          <section id="about">
-            <About />
-          </section>
-          <section id="philosophy">
-            <Philosophy />
-          </section>
-          <section id="work">
-            <Work />
-          </section>
-          <Footer />
+          <div className="container">
+            <div className="inner-container">
+              <section id="about">
+                <About />
+              </section>
+              <section id="philosophy">
+                <Philosophy />
+              </section>
+              <section id="work">
+                <Work />
+              </section>
+            </div>
+          </div>
+          {/* <Footer /> */}
+          <div className="bit-banner">
+            {
+              '#include<iostream> int main(){for(;;)std::cout<<"CREATE_MORE,CONSUME_LESS";return 0;}'
+            }
+          </div>
         </div>
       </ReactLenis>
     </>
